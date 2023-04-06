@@ -1,0 +1,68 @@
+Assignment 2.1) a. prime number
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+M = int(input("Enter the lower bound (M): "))
+N = int(input("Enter the upper bound (N): "))
+
+print("Prime numbers between", M, "and", N, "are:")
+for i in range(M, N+1):
+    if is_prime(i):
+        print(i)
+        
+ Assignment 2.1) b. Even number
+
+M = int(input("Enter the lower bound (M): "))
+N = int(input("Enter the upper bound (N): "))
+
+print("Even numbers between", M, "and", N, "are:")
+for i in range(M, N+1):
+    if i % 2 == 0:
+        print(i)
+
+ Assignment 2.2
+ 
+ def add_binary(a, b):
+    carry = 0
+    result = ''
+    i, j = len(a)-1, len(b)-1
+    while i >= 0 or j >= 0 or carry:
+        digit_a = int(a[i]) if i >= 0 else 0
+        digit_b = int(b[j]) if j >= 0 else 0
+        digit_sum = digit_a + digit_b + carry
+        carry = digit_sum // 2
+        result = str(digit_sum % 2) + result
+        i -= 1
+        j -= 1
+    return result
+    
+Assignment 2.3
+
+def transpose(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+    result = [[0 for j in range(rows)] for i in range(cols)]
+    for i in range(rows):
+        for j in range(cols):
+            result[j][i] = matrix[i][j]
+    return result
+print("Original matrix:")
+for row in matrix:
+    print(row)
+result = transpose(matrix)
+print("Transposed matrix:")
+for row in result:
+    print(row)
+
+Assignment 2.4
+
+import random
+for i in range(10):
+    num = random.randint(20, 40)
+    print(num)
